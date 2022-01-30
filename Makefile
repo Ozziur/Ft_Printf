@@ -6,12 +6,12 @@
 #    By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/28 13:23:09 by mruizzo           #+#    #+#              #
-#    Updated: 2022/01/29 21:22:10 by mruizzo          ###   ########.fr        #
+#    Updated: 2022/01/30 17:02:23 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-#FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 SRC = utils_str.c utill_num.c utils_print.c utils_print_str.c ft_flag.c ft_printf.c

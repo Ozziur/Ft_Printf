@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 18:29:33 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/29 22:00:57 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/01/30 17:24:50 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,27 @@ char	*print_char(char *s, va_list args, t_flag *flag)
 	}
 	else
 		ft_putchar(ch, flag);
+	s++;
+	return (s);
+}
+
+char	*print_str(char *s, char *arg, t_flag *flag)
+{
+	int	len;
+
+	len = ft_strlen(arg);
+	if (arg == NULL)
+		len = 6;
+	if (flag->point && flag->accuracy < len)
+		len = flag->accuracy;
+	if (flag ->width && !flag->minus)
+		print_spaces(flag->width - len, flag);
+	if (arg != NULL)
+		ft_putstr(arg, flag);
+	else
+		ft_putstr("(null)", flag);
+	if (flag ->width && flag->minus)
+		print_spaces(flag->width - len, flag);
 	s++;
 	return (s);
 }

@@ -6,11 +6,23 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 16:19:38 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/29 19:22:08 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/01/30 16:52:48 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_strlen(const char *str)
+{
+	int	i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -30,4 +42,18 @@ void	ft_putchar(char ch, t_flag *flag)
 {
 	write(1, &ch, 1);
 	flag->counter++;
+}
+
+void	ft_putstr(char *str, t_flag *flag)
+{
+	int	len;
+
+	if (str)
+	{
+		len = ft_strlen(str);
+		if (flag->point && flag->accuracy < len && flag->type == 's')
+			len = flag->accuracy;
+		write(1, str, len);
+		flag->counter += len;
+	}
 }
