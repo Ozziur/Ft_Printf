@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:34:48 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/30 16:59:52 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/01/31 18:59:49 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ typedef struct s_flag
 }	t_flag;
 
 int		ft_printf(const char *str, ...);
+void	print_spaces(int n, t_flag *flag);
 void	reset_flag(t_flag *flag);
 t_flag	*create_flag(void);
+void	print_zeroes(int n, t_flag *flag);
 char	*get_flags(char *s, t_flag *flag/*, va_list args*/);
 char	*ft_strchr(const char *s, int c);
 int		ft_isdigit(int c);
@@ -49,5 +51,10 @@ char	*scan_args(char *s, va_list args, t_flag *flag);
 char	*print_str(char *s, char *arg, t_flag *flag);
 int		ft_strlen(const char *str);
 void	ft_putstr(char *str, t_flag *flag);
+char	*print_integer(char *s, int num, t_flag *flag);
+int		len_num(long long n);
+int		ft_putnbr(long long n, t_flag *flag);
+char	*print_unsigned(char *s, va_list args, t_flag *flag);
+char	*print_pointer(char *s, va_list args, t_flag *flag);
 
 #endif

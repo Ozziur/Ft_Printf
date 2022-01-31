@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 18:29:33 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/30 17:24:50 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/01/31 16:02:15 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@ void	print_spaces(int n, t_flag *flag)
 			ft_putchar('0', flag);
 		else
 			ft_putchar(' ', flag);
+		n--;
+	}
+}
+
+void	print_zeroes(int n, t_flag *flag)
+{
+	while (n > 0)
+	{
+		ft_putchar('0', flag);
 		n--;
 	}
 }
@@ -64,4 +73,32 @@ char	*print_str(char *s, char *arg, t_flag *flag)
 		print_spaces(flag->width - len, flag);
 	s++;
 	return (s);
+}
+
+int	ft_putnbr(long long n, t_flag *flag)
+{
+	char	result[18];
+	int		i;
+
+	if (flag->point && flag->accuracy == 0 && n == 0)
+		return (0);
+	i = 1;
+	if (n == 0)
+		ft_putchar('0', flag);
+	if (n < 0)
+	{
+		n = -n;
+		if (!flag->zero && !flag->point)
+			ft_putchar('-', flag);
+	}
+	while (n)
+	{
+		result[i] = n % 10 + '0';
+		n = n / 10;
+		i++;
+	}
+	i--;
+	while (i)
+		ft_putchar(result[i--], flag);
+	return (0);
 }

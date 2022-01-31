@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 16:05:42 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/30 17:28:29 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/01/31 20:20:33 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ char	*scan_arg(char *s, va_list args, t_flag *flag)
 		return (print_char(s, args, flag));
 	else if (*s == 's')
 		return (print_str(s, va_arg(args, char *), flag));
-	return (s);
+	else if (*s == 'd' || *s == 'i')
+		return (print_integer(s, va_arg(args, int), flag));
+	else if (*s == 'u')
+		return (print_unsigned(s, args, flag));
+	// else if (*s == 'p')
+	// 	return (print_pointer(s,args,flag));
 	/*ricomincia da qui*/
+	return (s);
 }
