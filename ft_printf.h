@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:34:48 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/31 18:59:49 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/02/01 17:52:02 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,8 @@ int		len_num(long long n);
 int		ft_putnbr(long long n, t_flag *flag);
 char	*print_unsigned(char *s, va_list args, t_flag *flag);
 char	*print_pointer(char *s, va_list args, t_flag *flag);
+char	*print_pointer(char *s, va_list args, t_flag *flag);
+int		len_num_hex(unsigned long n);
+char	*print_hex(char *s, va_list args, t_flag *flag);
 
 #endif
