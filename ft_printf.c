@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:43:03 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/30 16:16:04 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/02/02 16:54:26 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_printf(const char *str, ...)
 		temp = s;
 		s = next_arg(s);
 		print_base_str(temp, s - temp, flag);
-		s = get_flags(s, flag /*, args*/);
+		s = get_flags(s, flag);
 		s = scan_arg(s, args, flag);
 		reset_flag(flag);
 	}

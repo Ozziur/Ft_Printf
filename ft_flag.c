@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 16:05:42 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/02/01 17:00:41 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/02/02 16:53:49 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	analize_flags(char *s, t_flag *flag)
 		flag->zero = 1;
 }
 
-char	*get_flags(char *s, t_flag *flag/*, va_list args*/)
+char	*get_flags(char *s, t_flag *flag)
 {
 	while (!ft_strchr("cspdiuxX%", *s))
 	{
@@ -78,6 +78,6 @@ char	*scan_arg(char *s, va_list args, t_flag *flag)
 	else if (*s == 'x' || *s == 'X')
 		return (print_hex(s, args, flag));
 	else if (*s == '%')
-		return (print_string(s, "%", flag));
+		return (print_str(s, "%", flag));
 	return (s);
 }

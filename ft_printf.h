@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:34:48 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/02/01 17:52:02 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/02/02 16:54:08 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	print_spaces(int n, t_flag *flag);
 void	reset_flag(t_flag *flag);
 t_flag	*create_flag(void);
 void	print_zeroes(int n, t_flag *flag);
-char	*get_flags(char *s, t_flag *flag/*, va_list args*/);
+char	*get_flags(char *s, t_flag *flag);
 char	*ft_strchr(const char *s, int c);
 int		ft_isdigit(int c);
 char	*ft_strchr(const char *s, int c);
@@ -58,6 +58,8 @@ char	*print_unsigned(char *s, va_list args, t_flag *flag);
 char	*print_pointer(char *s, va_list args, t_flag *flag);
 char	*print_pointer(char *s, va_list args, t_flag *flag);
 int		len_num_hex(unsigned long n);
+void	ft_putnbr_hex(char ch, long long num, t_flag *flag);
+void	print_hex_flag(char *s, long long num, int n_symbol, t_flag *flag);
 char	*print_hex(char *s, va_list args, t_flag *flag);
 
 #endif
