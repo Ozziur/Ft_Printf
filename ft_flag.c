@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 16:05:42 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/02/02 16:53:49 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/02/20 18:39:32 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	analize_flags(char *s, t_flag *flag)
 
 char	*get_flags(char *s, t_flag *flag)
 {
-	while (!ft_strchr("cspdiuxX%", *s))
+	while (!ft_strchr_pf("cspdiuxX%", *s))
 	{
 		analize_flags(s, flag);
 		if (ft_isdigit(*s) && flag->point)

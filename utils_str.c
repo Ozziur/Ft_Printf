@@ -6,13 +6,13 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 16:19:38 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/30 16:52:48 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/02/20 18:39:01 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(const char *str)
+int	ft_strlen_pf(const char *str)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_pf(const char *s, int c)
 {
 	unsigned char	ch;
 
@@ -50,7 +50,7 @@ void	ft_putstr(char *str, t_flag *flag)
 
 	if (str)
 	{
-		len = ft_strlen(str);
+		len = ft_strlen_pf(str);
 		if (flag->point && flag->accuracy < len && flag->type == 's')
 			len = flag->accuracy;
 		write(1, str, len);

@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 18:29:33 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/01/31 16:02:15 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/02/20 18:38:47 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*print_str(char *s, char *arg, t_flag *flag)
 {
 	int	len;
 
-	len = ft_strlen(arg);
+	len = ft_strlen_pf(arg);
 	if (arg == NULL)
 		len = 6;
 	if (flag->point && flag->accuracy < len)
